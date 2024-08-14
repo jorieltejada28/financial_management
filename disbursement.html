@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
      
     <!----===== Chart.js for Line Graph ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
@@ -31,35 +31,35 @@
         </div>
         <div class="menu-items">    
             <ul class="nav-links">
-                <li><a href="../dashboard/admin.html">
+                <li><a href="admin.html">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="../dashboard/disbursement.html">
+                <li><a href="disbursement.html">
                     <i class="uil uil-money-withdrawal"></i>
                     <span class="link-name">Disbursement</span>
                 </a></li>
-                <li><a href="../dashboard/budget-management.html">
+                <li><a href="budget-management.html">
                     <i class="uil uil-chart-line"></i>
                     <span class="link-name">Budget Management</span>
                 </a></li>
-                <li><a href="../dashboard/collection.html">
+                <li><a href="collection.html">
                     <i class="uil uil-money-bill"></i>
                     <span class="link-name">Collection</span>
                 </a></li>
-                <li><a href="../dashboard/accounts.html">
+                <li><a href="accounts.html">
                     <i class="uil uil-receipt"></i>
                     <span class="link-name">Accounts Payable / Receivable</span>
                 </a></li>
-                <li><a href="../dashboard/report.html">
+                <li><a href="report.html">
                     <i class="uil uil-chart-bar"></i>
                     <span class="link-name">Reports</span>
                 </a></li>
-                <li><a href="../dashboard/message.html">
+                <li><a href="message.html">
                     <i class="uil uil-envelope"></i>
                     <span class="link-name">Messages</span>
                 </a></li>
-                <li><a href="../dashboard/settings.html">
+                <li><a href="settings.html">
                     <i class="uil uil-setting"></i>
                     <span class="link-name">Settings</span>
                 </a></li>
@@ -67,7 +67,7 @@
             
             <ul class="logout-mode">
                 <li>
-                  <a href="#">
+                  <a href="index.html">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                   </a>
@@ -122,55 +122,57 @@
         </div>
 
         <div class="dash-content">
-            <div class="box">
-                <h2>Edit Profile</h2>
-                <div class="form">
-                <form id="edit-profile-form">
-                    <div class="form-group">
-                        <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="middle-name">Middle name</label>
-                        <input type="text" id="middle-name" name="middle-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile">Mobile Number</label>
-                        <input type="tel" id="mobile" name="mobile" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" name="address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="barangay">Address</label>
-                        <input type="text" id="barangay" name="barangay" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="zip">Zip Code</label>
-                        <input type="number" id="zip" name="zip" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit">Save Changes</button>
-                    </div>
-                </form>
+            <div class="disbursement-summary">
+                <div class="summary-box">
+                    <span class="summary-title">Total Disbursed</span>
+                    <span class="summary-value">₱1,250,000</span>
+                </div>
+                <div class="summary-box">
+                    <span class="summary-title">Pending Disbursements</span>
+                    <span class="summary-value">₱250,000</span>
+                </div>
             </div>
-            </div>            
-        </div>
+            <div class="disbursement-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Recipient</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-01-15</td>
+                            <td>ABC Corp</td>
+                            <td>₱500,000</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2024-02-20</td>
+                            <td>XYZ Ltd</td>
+                            <td>₱300,000</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>2024-03-05</td>
+                            <td>123 Inc</td>
+                            <td>₱450,000</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2024-04-10</td>
+                            <td>LMN Co</td>
+                            <td>₱250,000</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
     </section>
 
-    <script src="../js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

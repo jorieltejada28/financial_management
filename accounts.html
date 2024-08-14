@@ -6,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
      
     <!----===== Chart.js for Line Graph ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Financial Dashboard Panel</title>
 </head>
-<body>
+<body>  
     <nav>
       <br>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="images/logo.png" alt="">
+               <img src="images/logo.png" alt="">
             </div>
             <span class="logo_name">Finance</span>
         </div>
@@ -31,35 +30,35 @@
         </div>
         <div class="menu-items">    
             <ul class="nav-links">
-                <li><a href="../dashboard/admin.html">
+                <li><a href="admin.html">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="../dashboard/disbursement.html">
+                <li><a href="disbursement.html">
                     <i class="uil uil-money-withdrawal"></i>
                     <span class="link-name">Disbursement</span>
                 </a></li>
-                <li><a href="../dashboard/budget-management.html">
+                <li><a href="budget-management.html">
                     <i class="uil uil-chart-line"></i>
                     <span class="link-name">Budget Management</span>
                 </a></li>
-                <li><a href="../dashboard/collection.html">
+                <li><a href="collection.html">
                     <i class="uil uil-money-bill"></i>
                     <span class="link-name">Collection</span>
                 </a></li>
-                <li><a href="../dashboard/accounts.html">
+                <li><a href="accounts.html">
                     <i class="uil uil-receipt"></i>
                     <span class="link-name">Accounts Payable / Receivable</span>
                 </a></li>
-                <li><a href="../dashboard/report.html">
+                <li><a href="report.html">
                     <i class="uil uil-chart-bar"></i>
                     <span class="link-name">Reports</span>
                 </a></li>
-                <li><a href="../dashboard/message.html">
+                <li><a href="message.html">
                     <i class="uil uil-envelope"></i>
                     <span class="link-name">Messages</span>
                 </a></li>
-                <li><a href="../dashboard/settings.html">
+                <li><a href="settings.html">
                     <i class="uil uil-setting"></i>
                     <span class="link-name">Settings</span>
                 </a></li>
@@ -67,10 +66,10 @@
             
             <ul class="logout-mode">
                 <li>
-                    <a href="#">
-                        <i class="uil uil-signout"></i>
-                        <span class="link-name">Logout</span>
-                    </a>
+                  <a href="index.html">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                  </a>
                 </li>
 
                 <li class="mode">
@@ -79,9 +78,9 @@
                       <span class="link-name">Dark Mode</span>
                     </a>
 
-                    <div class="mode-toggle">
-                      <span class="switch"></span>
-                    </div>
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
                 </li>
             </ul>
         </div>
@@ -122,31 +121,72 @@
         </div>
 
         <div class="dash-content">
-            <div class="graph">
-                <div class="graph-container line-graph">
-                    <canvas id="lineChart" width="600" height="300"></canvas>
+            <div class="accounts-section">
+                <div class="accounts-box accounts-payable">
+                    <div class="summary">
+                        <div class="summary-item">
+                            <span class="summary-title">Total Payable</span>
+                            <span class="summary-value" id="total-payable">₱0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-title">Due This Month</span>
+                            <span class="summary-value" id="due-this-month-payable">₱0</span>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" id="add-payable-btn">Add Entry</button>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Vendor</th>
+                                    <th>Invoice Number</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="payable-table-body">
+                                <!-- Rows will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <div class="graph-container pie-graph">
-                    <canvas id="pieChart" width="600" height="300"></canvas>
-                </div>
-
-                <div class="graph-container donut-graph">
-                    <canvas id="donutChart" width="600" height="300"></canvas>
-                </div>
-
-                <div class="graph-container bar-graph">
-                    <canvas id="barChart" width="600" height="300"></canvas>
+    
+                <div class="accounts-box accounts-receivable">
+                    <div class="summary">
+                        <div class="summary-item">
+                            <span class="summary-title">Total Receivable</span>
+                            <span class="summary-value" id="total-receivable">₱0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-title">Due This Month</span>
+                            <span class="summary-value" id="due-this-month-receivable">₱0</span>
+                        </div>
+                    </div>
+                    <button class="add-entry-btn" id="add-receivable-btn">Add Entry</button>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Invoice Number</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="receivable-table-body">
+                                <!-- Rows will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="../js/linegraph.js"></script>
-    <script src="../js/piegraph.js"></script>
-    <script src="../js/donutchart.js"></script>
-    <script src="../js/bargraph.js"></script>
+    
 
-    <script src="../js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

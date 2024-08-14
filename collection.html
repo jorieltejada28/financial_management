@@ -5,61 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    
-    <!-- Chart.js for Line Graph -->
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Chart.js for Line Graph ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
-    <!-- Iconscout CSS -->
+    <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Financial Dashboard Panel</title>
 </head>
 <body>
     <nav>
-        <br>
+      <br>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="images/logo.png" alt="">
+               <img src="images/logo.png" alt="">
             </div>
             <span class="logo_name">Finance</span>
         </div>
         <br>
         <div class="full-name">
-            <span class="full_name">Name:</span>
+          <span class="full_name">Name:</span>
         </div>
         <div class="menu-items">    
             <ul class="nav-links">
-                <li><a href="../dashboard/admin.html">
+                <li><a href="admin.html">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="../dashboard/disbursement.html">
+                <li><a href="disbursement.html">
                     <i class="uil uil-money-withdrawal"></i>
                     <span class="link-name">Disbursement</span>
                 </a></li>
-                <li><a href="../dashboard/budget-management.html">
+                <li><a href="budget-management.html">
                     <i class="uil uil-chart-line"></i>
                     <span class="link-name">Budget Management</span>
                 </a></li>
-                <li><a href="../dashboard/collection.html">
+                <li><a href="collection.html">
                     <i class="uil uil-money-bill"></i>
                     <span class="link-name">Collection</span>
                 </a></li>
-                <li><a href="../dashboard/accounts.html">
+                <li><a href="accounts.html">
                     <i class="uil uil-receipt"></i>
                     <span class="link-name">Accounts Payable / Receivable</span>
                 </a></li>
-                <li><a href="../dashboard/report.html">
+                <li><a href="report.html">
                     <i class="uil uil-chart-bar"></i>
                     <span class="link-name">Reports</span>
                 </a></li>
-                <li><a href="../dashboard/message.html">
+                <li><a href="message.html">
                     <i class="uil uil-envelope"></i>
                     <span class="link-name">Messages</span>
                 </a></li>
-                <li><a href="../dashboard/settings.html">
+                <li><a href="settings.html">
                     <i class="uil uil-setting"></i>
                     <span class="link-name">Settings</span>
                 </a></li>
@@ -67,19 +67,21 @@
             
             <ul class="logout-mode">
                 <li>
-                    <a href="#">
-                        <i class="uil uil-signout"></i>
-                        <span class="link-name">Logout</span>
-                    </a>
+                  <a href="index.html">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                  </a>
                 </li>
+
                 <li class="mode">
                     <a href="#">
-                        <i class="uil uil-moon"></i>
-                        <span class="link-name">Dark Mode</span>
+                      <i class="uil uil-moon"></i>
+                      <span class="link-name">Dark Mode</span>
                     </a>
-                    <div class="mode-toggle">
-                        <span class="switch"></span>
-                    </div>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
                 </li>
             </ul>
         </div>
@@ -88,10 +90,12 @@
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
+
             <div class="search-box">
                 <i class="uil uil-search"></i>
                 <input type="text" placeholder="Search...">
             </div>
+
             <div class="icon">
                 <div class="dropdown">
                     <button class="dropbtn">
@@ -103,6 +107,7 @@
                         <a href="#">Option 3</a>
                     </div>
                 </div>
+                
                 <div class="dropdown">
                     <button class="dropbtn">
                         <i class="uil uil-envelope message-icon"></i>
@@ -115,39 +120,31 @@
                 </div>
             </div>
         </div>
+
         <div class="dash-content">
-            <div class="chat-box" id="chat-box">
-                <div class="chat-messages" id="chat-messages">
-                    <!-- Chat messages will be displayed here -->
-                    <div class="message-container">
-                        <div class="message-receiver">
-                            <div class="sender">John</div>
-                            <div class="text">Hello, how can I help you?</div>
-                        </div>
-                        <div class="message-receiver">
-                            <div class="sender">Jane</div>
-                            <div class="text">Hi, I have a question about our financial report.</div>
-                        </div>
-                        <div class="sender-container">
-                            <div class="message-sender">
-                                <div class="sender">You</div>
-                                <div class="text">Nothing</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="collection-management">
+                <div class="collection-form">
+                    <button id="add-collection" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCollectionModal">Add Collection</button>
                 </div>
-                <div class="chat-input">
-                    <label for="file-input" class="file-label">
-                        <i class="uil uil-paperclip"></i>
-                    </label>
-                    <input type="file" id="file-input">
-                    <input type="text" id="message-input" placeholder="Type your message...">
-                    <button id="send-button">Send</button>
+                <div class="collection-list">
+                    <table id="collection-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="collection-body">
+                            <!-- Collection items will be dynamically added here -->
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            </div> 
         </div>
+        
     </section>
 
-    <script src="../js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

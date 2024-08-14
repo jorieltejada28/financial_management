@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
      
     <!----===== Chart.js for Line Graph ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
@@ -21,7 +21,7 @@
       <br>
         <div class="logo-name">
             <div class="logo-image">
-               <img src="images/logo.png" alt="">
+                <img src="images/logo.png" alt="">
             </div>
             <span class="logo_name">Finance</span>
         </div>
@@ -31,35 +31,35 @@
         </div>
         <div class="menu-items">    
             <ul class="nav-links">
-                <li><a href="../dashboard/admin.html">
+                <li><a href="admin.html">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="../dashboard/disbursement.html">
+                <li><a href="disbursement.html">
                     <i class="uil uil-money-withdrawal"></i>
                     <span class="link-name">Disbursement</span>
                 </a></li>
-                <li><a href="../dashboard/budget-management.html">
+                <li><a href="budget-management.html">
                     <i class="uil uil-chart-line"></i>
                     <span class="link-name">Budget Management</span>
                 </a></li>
-                <li><a href="../dashboard/collection.html">
+                <li><a href="collection.html">
                     <i class="uil uil-money-bill"></i>
                     <span class="link-name">Collection</span>
                 </a></li>
-                <li><a href="../dashboard/accounts.html">
+                <li><a href="accounts.html">
                     <i class="uil uil-receipt"></i>
                     <span class="link-name">Accounts Payable / Receivable</span>
                 </a></li>
-                <li><a href="../dashboard/report.html">
+                <li><a href="report.html">
                     <i class="uil uil-chart-bar"></i>
                     <span class="link-name">Reports</span>
                 </a></li>
-                <li><a href="../dashboard/message.html">
+                <li><a href="message.html">
                     <i class="uil uil-envelope"></i>
                     <span class="link-name">Messages</span>
                 </a></li>
-                <li><a href="../dashboard/settings.html">
+                <li><a href="settings.html">
                     <i class="uil uil-setting"></i>
                     <span class="link-name">Settings</span>
                 </a></li>
@@ -67,7 +67,7 @@
             
             <ul class="logout-mode">
                 <li>
-                  <a href="#">
+                  <a href="index.html">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                   </a>
@@ -79,9 +79,9 @@
                       <span class="link-name">Dark Mode</span>
                     </a>
 
-                <div class="mode-toggle">
-                  <span class="switch"></span>
-                </div>
+                    <div class="mode-toggle">
+                      <span class="switch"></span>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -122,29 +122,31 @@
         </div>
 
         <div class="dash-content">
-            <div class="budget-management">
-                <div class="budget-form">
-                    <button id="add-budget">Add Budget</button>
+            <div class="graph">
+                <div class="graph-container line-graph">
+                    <canvas id="lineChart" width="600" height="300"></canvas>
                 </div>
-                <div class="budget-list">
-                    <table id="budget-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Amount</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="budget-body">
-                            <!-- Budget items will be dynamically added here -->
-                        </tbody>
-                    </table>
+
+                <div class="graph-container pie-graph">
+                    <canvas id="pieChart" width="600" height="300"></canvas>
                 </div>
-            </div>   
+
+                <div class="graph-container donut-graph">
+                    <canvas id="donutChart" width="600" height="300"></canvas>
+                </div>
+
+                <div class="graph-container bar-graph">
+                    <canvas id="barChart" width="600" height="300"></canvas>
+                </div>
+            </div>
         </div>
-        
     </section>
 
-    <script src="../js/script.js"></script>
+    <script src="linegraph.js"></script>
+    <script src="piegraph.js"></script>
+    <script src="donutchart.js"></script>
+    <script src="bargraph.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
